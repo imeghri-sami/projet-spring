@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  bmma-app-server:
+    image: bmma-app-server
+    ports:
+      - 8080:8080
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - bmma-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: bmma-db
+
+volumes:
+  bmma-mysql-data:

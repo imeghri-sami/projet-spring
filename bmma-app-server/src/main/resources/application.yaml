@@ -1,0 +1,13 @@
+server:
+  error:
+    include-message: always
+    include-stacktrace: never
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    username: root
+    password: password
+    url: jdbc:mysql://mysql:3306/bmma-db
