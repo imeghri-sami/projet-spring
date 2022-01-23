@@ -1,8 +1,25 @@
 version: "3.7"
 
 services:
+  bmma-app-client:
+    container_name: bmma-app-client
+    build:
+      context: ./bmma-app-client
+      dockerfile: Dockerfile
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    ports:
+        - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./bmma-app-client/node_modules
+      - ./bmma-app-client:/app
   bmma-app-server:
-    image: bmma-app-server
+    image: openjdk:11
+    command: sh -c "./mvnw spring-boot:run"
+    working_dir: /app
+    volumes:
+      - ./bmma-app-server:/app
     ports:
       - 8080:8080
   mysql:
@@ -15,3 +32,4 @@ services:
 
 volumes:
   bmma-mysql-data:
+  node-modules:
