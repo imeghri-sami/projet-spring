@@ -1,13 +1,13 @@
-package com.bmma.bmmabackend;
+package com.app_server.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BmmabackendApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BmmabackendApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

@@ -1,5 +1,5 @@
 {
-  "name": "bmma-app-client",
+  "name": "app-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

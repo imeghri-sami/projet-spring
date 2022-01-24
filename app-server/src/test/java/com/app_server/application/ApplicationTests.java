@@ -1,10 +1,10 @@
-package com.bmma.bmmabackend;
+package com.app_server.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BmmabackendApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {

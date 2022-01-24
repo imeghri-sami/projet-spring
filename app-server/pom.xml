@@ -8,11 +8,11 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bmma</groupId>
-	<artifactId>bmmabackend</artifactId>
-	<name>bmmabackend</name>
+	<groupId>com.app_server</groupId>
+	<artifactId>app_server</artifactId>
+	<name>app_server</name>
 	<version>0.0.1-SNAPSHOT</version>
-	<description>Demo project for Spring Boot</description>
+	<description></description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -56,9 +56,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<excludeDevtools>
-						false
-					</excludeDevtools>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
