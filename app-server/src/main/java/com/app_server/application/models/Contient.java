@@ -17,8 +17,8 @@ public class Contient {
     private int refContient;
     private double quantIngr;
 
-    @ManyToOne(targetEntity = Recette.class)
-    private int ref_recette_contient;
-    @ManyToOne(targetEntity = Ingredient.class)
-    private int ref_ingr_contient;
+    @ManyToOne()
+    private Recette recette;
+    @ManyToOne()
+    private Ingredient ingredient;
 }

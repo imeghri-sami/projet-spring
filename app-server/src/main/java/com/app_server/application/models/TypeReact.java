@@ -20,6 +20,6 @@ public class TypeReact {
     private String labelReact;
 
 
-    @OneToMany(targetEntity = Reaction.class)
+    @OneToMany(mappedBy = "typeReact")
     private List<Reaction> reactionList;
 }

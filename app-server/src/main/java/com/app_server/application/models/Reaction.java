@@ -14,10 +14,10 @@ public class Reaction {
     @Id
     private int refReaction;
 
-    @ManyToOne(targetEntity = Recette.class)
-    private int ref_recette_reaction;
-    @ManyToOne(targetEntity = Utilisateur.class)
-    private int ref_user_reaction;
-    @ManyToOne(targetEntity = TypeReact.class)
-    private int ref_react_reaction;
+    @ManyToOne()
+    private Recette recette;
+    @ManyToOne()
+    private Utilisateur utilisateur;
+    @ManyToOne()
+    private TypeReact typeReact;
 }

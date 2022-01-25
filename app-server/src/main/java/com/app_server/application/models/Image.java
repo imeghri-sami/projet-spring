@@ -16,6 +16,6 @@ public class Image {
     private int refImg;
     private String urlImg;
 
-    @ManyToOne(targetEntity = Recette.class)
-    private int ref_recette_img;
+    @ManyToOne()
+    private Recette recette;
 }

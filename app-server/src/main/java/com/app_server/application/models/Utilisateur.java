@@ -23,10 +23,10 @@ public class Utilisateur {
     private String descUser;
     private String photoUser;
 
-    @OneToMany(targetEntity = Recette.class)
+    @OneToMany(mappedBy = "utilisateur")
     private List<Recette> recetteList;
-    @OneToMany(targetEntity = Favori.class)
+    @OneToMany(mappedBy = "utilisateur")
     private List<Favori> favoriList;
-    @OneToMany(targetEntity = Reaction.class)
+    @OneToMany(mappedBy = "utilisateur")
     private List<Reaction> reactionList;
 }

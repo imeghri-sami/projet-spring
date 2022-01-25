@@ -18,8 +18,8 @@ public class Favori {
     private int refFav;
     private Date dateFav;
 
-    @ManyToOne(targetEntity = Recette.class)
-    private int ref_recette_fav;
-    @ManyToOne(targetEntity = Utilisateur.class)
-    private int ref_user_fav;
+    @ManyToOne()
+    private Recette recette;
+    @ManyToOne()
+    private Utilisateur utilisateur;
 }

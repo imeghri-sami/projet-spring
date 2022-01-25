@@ -22,18 +22,18 @@ public class Recette {
     private Date videoRecette;
     private double tempsRecette;
 
-    @ManyToOne(targetEntity = Utilisateur.class)
-    private int ref_user_recette;
-    @ManyToOne(targetEntity = Categorie.class)
-    private int ref_categ_recette;
+    @ManyToOne()
+    private Utilisateur utilisateur;
+    @ManyToOne()
+    private Categorie categorie;
 
-    @OneToMany(targetEntity = Image.class,mappedBy = "")
+    @OneToMany(mappedBy = "recette")
     private List<Image> imageList;
-    @OneToMany(targetEntity = Reaction.class)
+    @OneToMany(mappedBy = "recette")
     private List<Reaction> reactionList;
-    @OneToMany(targetEntity = Contient.class)
+    @OneToMany(mappedBy = "recette")
     private List<Contient> contientList;
-    @OneToMany(targetEntity = Favori.class)
+    @OneToMany(mappedBy = "recette")
     private List<Favori> favoriList;
 
 }

@@ -20,7 +20,7 @@ public class Categorie {
     private String imgCateg;
     private String nomCateg;
 
-    @OneToMany(targetEntity = Recette.class)
+    @OneToMany(mappedBy = "categorie")
     private List<Recette> recetteList;
 
 }

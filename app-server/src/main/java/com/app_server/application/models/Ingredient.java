@@ -19,6 +19,6 @@ public class Ingredient {
     private float prifIngr;
     private int unifIngr;
 
-    @OneToMany(targetEntity = Contient.class)
+    @OneToMany(mappedBy = "ingredient")
     private List<Contient> contientList;
 }
