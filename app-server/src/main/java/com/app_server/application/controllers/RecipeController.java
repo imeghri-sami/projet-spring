@@ -1,4 +1,4 @@
-package com.app_server.application.controllers-server.application.controllers;
+package com.app_server.application.controllers;
 
 public class RecipeController {
 

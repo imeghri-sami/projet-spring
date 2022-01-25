@@ -10,7 +10,7 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: project-db
+      MYSQL_DATABASE: project_db
 
 volumes:
   mysql-data:
