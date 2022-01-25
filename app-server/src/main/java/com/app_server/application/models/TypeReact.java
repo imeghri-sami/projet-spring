@@ -15,9 +15,9 @@ import java.util.List;
 public class TypeReact {
 
     @Id
-    private int refReact;
-    private String imgReact;
-    private String labelReact;
+    private int ref;
+    private String img;
+    private String label;
 
 
     @OneToMany(mappedBy = "typeReact")

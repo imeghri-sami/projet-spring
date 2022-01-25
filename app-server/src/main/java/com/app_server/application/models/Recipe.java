@@ -1,0 +1,39 @@
+package com.app_server.application.models;
+
+import lombok.*;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Recipe {
+    @Id
+    private int reference;
+    private String desc;
+    private String name;
+    private Date date;
+    private Date video;
+    private double time;
+
+    @ManyToOne()
+    private User user;
+    @ManyToOne()
+    private Category category;
+
+    @OneToMany(mappedBy = "recipe")
+    private List<Image> imageList;
+    @OneToMany(mappedBy = "recipe")
+    private List<Reaction> reactionList;
+    @OneToMany(mappedBy = "recipe")
+    private List<Content> contentList;
+    @OneToMany(mappedBy = "recipe")
+    private List<Favorite> favoriteList;
+
+}

@@ -1,7 +1,7 @@
 package com.app_server.application.controllers;
 
-import com.app_server.application.models.Recette;
-import com.app_server.application.services.RecetteService;
+import com.app_server.application.models.Recipe;
+import com.app_server.application.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,13 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/recette")
-public class RecetteController {
+public class RecipeController {
 
     @Autowired
-    private RecetteService recetteService;
+    private RecipeService recipeService;
 
     @GetMapping("/getAll")
-    public List<Recette> getAllRecettes(){
+    public List<Recipe> getAllRecettes(){
         return null;
     }
 }

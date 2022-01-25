@@ -4,7 +4,6 @@ import lombok.*;
 import javax.persistence.Id;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.List;
 
@@ -13,14 +12,14 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Categorie {
+public class Category {
 
     @Id
-    private int refCateg;
-    private String imgCateg;
-    private String nomCateg;
+    private int ref;
+    private String img;
+    private String name;
 
-    @OneToMany(mappedBy = "categorie")
-    private List<Recette> recetteList;
+    @OneToMany(mappedBy = "category")
+    private List<Recipe> recipeList;
 
 }

@@ -1,4 +1,4 @@
 package com.app_server.application.services;
 
-public interface ContientService {
+public interface RecipeService {
 }

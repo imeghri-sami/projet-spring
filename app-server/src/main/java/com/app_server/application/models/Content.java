@@ -11,14 +11,14 @@ import javax.persistence.ManyToOne;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Contient {
+public class Content {
 
     @Id
-    private int refContient;
-    private double quantIngr;
+    private int ref;
+    private double ingredientQuantity;
 
     @ManyToOne()
-    private Recette recette;
+    private Recipe recipe;
     @ManyToOne()
     private Ingredient ingredient;
 }

@@ -1,12 +1,12 @@
 package com.app_server.application.services;
 
-import com.app_server.application.repositories.TypeReactRepository;
+import com.app_server.application.repositories.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TypeReactServiceImpl implements TypeReactService{
+public class RecipeServiceImpl implements RecipeService {
 
     @Autowired
-    private TypeReactRepository typeReactRepository;
+    private RecipeRepository recipeRepository;
 }

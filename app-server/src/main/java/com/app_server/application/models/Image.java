@@ -13,9 +13,9 @@ import javax.persistence.ManyToOne;
 public class Image {
 
     @Id
-    private int refImg;
-    private String urlImg;
+    private int ref;
+    private String url;
 
     @ManyToOne()
-    private Recette recette;
+    private Recipe recipe;
 }

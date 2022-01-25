@@ -13,12 +13,12 @@ import java.util.List;
 @AllArgsConstructor
 public class Ingredient {
     @Id
-    private int refIngr;
-    private String imfIngr;
-    private String nofIngr;
-    private float prifIngr;
-    private int unifIngr;
+    private int ref;
+    private String img;
+    private String name;
+    private float price;
+    private int unit;
 
     @OneToMany(mappedBy = "ingredient")
-    private List<Contient> contientList;
+    private List<Content> contentList;
 }

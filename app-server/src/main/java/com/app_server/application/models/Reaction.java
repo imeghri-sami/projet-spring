@@ -12,12 +12,12 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 public class Reaction {
     @Id
-    private int refReaction;
+    private int ref;
 
     @ManyToOne()
-    private Recette recette;
+    private Recipe recipe;
     @ManyToOne()
-    private Utilisateur utilisateur;
+    private User user;
     @ManyToOne()
     private TypeReact typeReact;
 }

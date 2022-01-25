@@ -12,14 +12,14 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Favori {
+public class Favorite {
 
     @Id
-    private int refFav;
-    private Date dateFav;
+    private int ref;
+    private Date date;
 
     @ManyToOne()
-    private Recette recette;
+    private Recipe recipe;
     @ManyToOne()
-    private Utilisateur utilisateur;
+    private User user;
 }
