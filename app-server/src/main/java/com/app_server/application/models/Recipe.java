@@ -36,5 +36,13 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe")
     private List<Favorite> favoriteList;
 
+    public float getPrice(){
+        float total=0;
+        for (Content content :
+                contentList) {
+            total+= content.getIngredient().getPrice()*content.getIngredientQuantity();
+        }
+        return total;
+    }
 
 }
