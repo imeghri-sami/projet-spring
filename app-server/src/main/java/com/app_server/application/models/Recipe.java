@@ -15,11 +15,11 @@ import java.util.List;
 @AllArgsConstructor
 public class Recipe {
     @Id
-    private int reference;
-    private String desc;
+    private int ref;
+    private String description;
     private String name;
     private Date date;
-    private Date video;
+    private String video;
     private double time;
 
     @ManyToOne()
@@ -35,5 +35,6 @@ public class Recipe {
     private List<Content> contentList;
     @OneToMany(mappedBy = "recipe")
     private List<Favorite> favoriteList;
+
 
 }
