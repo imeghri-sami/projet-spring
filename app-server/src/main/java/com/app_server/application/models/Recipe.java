@@ -1,10 +1,8 @@
 package com.app_server.application.models;
 
 import lombok.*;
-import javax.persistence.Id;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Recipe {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ref;
     private String description;
     private String name;
@@ -22,9 +21,9 @@ public class Recipe {
     private String video;
     private double time;
 
-    @ManyToOne()
+    @ManyToOne
     private User user;
-    @ManyToOne()
+    @ManyToOne
     private Category category;
 
     @OneToMany(mappedBy = "recipe")

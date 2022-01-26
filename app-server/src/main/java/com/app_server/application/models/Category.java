@@ -1,10 +1,9 @@
 package com.app_server.application.models;
 
 import lombok.*;
-import javax.persistence.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -15,6 +14,7 @@ import java.util.List;
 public class Category {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ref;
     private String img;
     private String name;

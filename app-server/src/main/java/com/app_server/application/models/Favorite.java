@@ -1,10 +1,9 @@
 package com.app_server.application.models;
 
 import lombok.*;
-import javax.persistence.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+
 import java.util.Date;
 
 @Entity
@@ -15,11 +14,12 @@ import java.util.Date;
 public class Favorite {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ref;
     private Date date;
 
-    @ManyToOne()
+    @ManyToOne
     private Recipe recipe;
-    @ManyToOne()
+    @ManyToOne
     private User user;
 }

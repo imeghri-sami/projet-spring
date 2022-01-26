@@ -20,6 +20,7 @@ public class RecipeController {
     public List<Recipe> getAll() {
         return recipeService.getAll();
     }
+
     @PostMapping("/recipes/create")
     public Recipe addRecipe(@RequestBody Recipe payload){
         return recipeService.addRecipe(payload);

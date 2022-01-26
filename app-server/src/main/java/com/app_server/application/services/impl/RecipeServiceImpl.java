@@ -1,7 +1,8 @@
-package com.app_server.application.services;
+package com.app_server.application.services.impl;
 
 import com.app_server.application.models.Recipe;
 import com.app_server.application.repositories.RecipeRepository;
+import com.app_server.application.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
