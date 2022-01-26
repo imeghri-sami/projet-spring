@@ -5,7 +5,9 @@ import com.app_server.application.models.Recipe;
 import java.util.List;
 
 public interface RecipeService {
-    List<Recipe> getAllRecettes();
+    List<Recipe> getAll();
+
+    Recipe addRecipe(Recipe payload);
 
     List<Recipe> getAllRecettesBy(String by, String order);
 

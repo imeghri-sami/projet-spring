@@ -15,8 +15,14 @@ public class RecipeServiceImpl implements RecipeService {
     private RecipeRepository recipeRepository;
 
     @Override
-    public List<Recipe> getAllRecettes() {
-        return recipeRepository.findAll();
+    public List<Recipe> getAll() {
+
+    return recipeRepository.findAll();
+    }
+
+    @Override
+    public Recipe addRecipe(Recipe payload) {
+        return recipeRepository.save(payload);
     }
 
     @Override

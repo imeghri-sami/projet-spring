@@ -44,4 +44,5 @@ public class Recipe {
         }
         return total;
     }
+
 }
