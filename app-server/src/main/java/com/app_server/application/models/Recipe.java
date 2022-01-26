@@ -15,11 +15,11 @@ import java.util.List;
 @AllArgsConstructor
 public class Recipe {
     @Id
-    private int reference;
-    private String desc;
+    private int ref;
+    private String description;
     private String name;
     private Date date;
-    private Date video;
+    private String video;
     private double time;
 
     @ManyToOne()
@@ -36,4 +36,12 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe")
     private List<Favorite> favoriteList;
 
+    public float getPrice(){
+        float total=0;
+        for (Content content :
+                contentList) {
+            total+= content.getIngredient().getPrice()*content.getIngredientQuantity();
+        }
+        return total;
+    }
 }
