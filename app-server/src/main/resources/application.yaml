@@ -10,4 +10,4 @@ spring:
   datasource:
     username: root
     password: password
-    url: jdbc:mysql://localhost:3306/project-db
+    url: jdbc:mysql://localhost:3306/project_db

@@ -1,5 +1,4 @@
 package com.app_server.application.services;
 
-public interface RecipeService {
-
+public interface IngredientService {
 }
