@@ -1,9 +1,8 @@
 package com.app_server.application.models;
 
 import lombok.*;
-import javax.persistence.Id;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -12,12 +11,13 @@ import javax.persistence.ManyToOne;
 @AllArgsConstructor
 public class Reaction {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ref;
 
-    @ManyToOne()
+    @ManyToOne
     private Recipe recipe;
-    @ManyToOne()
+    @ManyToOne
     private User user;
-    @ManyToOne()
+    @ManyToOne
     private TypeReact typeReact;
 }

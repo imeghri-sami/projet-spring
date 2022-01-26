@@ -1,10 +1,8 @@
 package com.app_server.application.models;
 
 import lombok.*;
-import javax.persistence.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -14,11 +12,12 @@ import javax.persistence.ManyToOne;
 public class Content {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ref;
     private double ingredientQuantity;
 
-    @ManyToOne()
+    @ManyToOne
     private Recipe recipe;
-    @ManyToOne()
+    @ManyToOne
     private Ingredient ingredient;
 }

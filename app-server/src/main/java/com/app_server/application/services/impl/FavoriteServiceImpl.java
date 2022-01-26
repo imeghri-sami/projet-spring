@@ -1,6 +1,7 @@
-package com.app_server.application.services;
+package com.app_server.application.services.impl;
 
 import com.app_server.application.repositories.FavoriteRepository;
+import com.app_server.application.services.FavoriteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
