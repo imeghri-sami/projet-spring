@@ -24,12 +24,13 @@ public class OAuth2LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHan
         CustomOauth2User oauth2User = (CustomOauth2User) authentication.getPrincipal();
 
         String email = oauth2User.getEmail();
+        String photoUrl = oauth2User.getAttribute("picture");
         String name = oauth2User.getAttribute("name");
 
         User authedUser = userService.findUserByEmail(email);
         if(authedUser == null){
             // register new user
-            userService.createNewUserAfterOAuthLoginSuccess( name , email );
+            userService.createNewUserAfterOAuthLoginSuccess( name , photoUrl, email );
         }
 
         super.onAuthenticationSuccess(request, response, authentication);

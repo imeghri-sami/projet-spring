@@ -17,10 +17,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createNewUserAfterOAuthLoginSuccess(String fullName, String email) {
+    public void createNewUserAfterOAuthLoginSuccess(String fullName, String photoUrl , String email) {
         User user = new User();
         user.setEmail(email);
         user.setName(fullName);
+        user.setPhoto(photoUrl);
         userRepository.save(user);
     }
 }
