@@ -1,4 +1,4 @@
-package com.app_server.application.oauth2;
+package com.app_server.application.models;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
