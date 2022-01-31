@@ -14,3 +14,13 @@ spring:
     username: root
     password: password
     url: jdbc:mysql://localhost:3306/project_db
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: ${GOOGLE_CLIENT_ID}
+            clientSecret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - profile
+              - email
