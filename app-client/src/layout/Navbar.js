@@ -1,0 +1,59 @@
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
+import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+
+import React from "react";
+import GoogleLogin from "react-google-login";
+import { Box } from "@mui/system";
+
+export default function Navbar() {
+  const [value, setValue] = React.useState(0);
+  let isSignedIn = true;
+  return (
+    <Box
+      sx={{
+        position: "fixed",
+        bottom: 10,
+        left: 0,
+        right: 0,
+      }}
+    >
+      {!isSignedIn ? (
+        /* https://www.npmjs.com/package/react-google-login */
+        <div
+          style={{ display: "flex", justifyContent: "center", padding: "5px" }}
+        >
+          <GoogleLogin
+            clientId=""
+            buttonText="Sign up / Login"
+            cookiePolicy={"single_host_origin"}
+          />
+        </div>
+      ) : (
+        <BottomNavigation
+          showLabels
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        >
+          <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon />} />
+          <BottomNavigationAction
+            label="Create"
+            icon={<AddBoxOutlinedIcon />}
+          />
+          <BottomNavigationAction
+            label="Explore"
+            icon={<ExploreOutlinedIcon />}
+          />
+          <BottomNavigationAction
+            label="Account"
+            icon={<AccountCircleOutlinedIcon />}
+          />
+        </BottomNavigation>
+      )}
+    </Box>
+  );
+}

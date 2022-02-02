@@ -1,7 +1,11 @@
+import Header from "./layout/Header";
+import Navbar from "./layout/Navbar";
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header />
+      <Navbar />
     </div>
   );
 }
