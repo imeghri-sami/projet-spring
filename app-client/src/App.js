@@ -1,19 +1,9 @@
-
-
 function App() {
-  function fetchTest(){
-     console.log("test  d");
-  }
   return (
-
     <div className="App">
-      <header className="App-header">
-        {fetchTest()}
-      </header>
+      <header className="App-header"></header>
     </div>
-
   );
-
 }
 
 export default App;
