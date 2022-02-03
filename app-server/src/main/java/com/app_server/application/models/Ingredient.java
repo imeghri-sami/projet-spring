@@ -17,7 +17,7 @@ public class Ingredient {
     private String img;
     private String name;
     private float price;
-    private int unit;
+    private String unit;
 
     @OneToMany(mappedBy = "ingredient")
     private List<Content> contentList;
