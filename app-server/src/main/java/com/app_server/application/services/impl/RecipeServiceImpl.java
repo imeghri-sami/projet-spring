@@ -4,6 +4,8 @@ import com.app_server.application.models.Recipe;
 import com.app_server.application.repositories.RecipeRepository;
 import com.app_server.application.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +18,14 @@ public class RecipeServiceImpl implements RecipeService {
     private RecipeRepository recipeRepository;
 
     @Override
-    public List<Recipe> getAll() {
-
-    return recipeRepository.findAll();
+    public List<Recipe> getAll(int page,int size) {
+        return recipeRepository
+                .findAll(
+                    PageRequest
+                            .of(page,size,Sort.by("ref")
+                            .ascending())
+                )
+                .toList();
     }
 
     @Override
@@ -27,7 +34,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public List<Recipe> getAllRecettesBy(String by, String order) {
+    public List<Recipe> getAllRecettesBy(int lasIndex, String by, String order) {
         if (by.equals("name")){
             if (order.equals("asc"))
                 return recipeRepository.findAll(Sort.by(Sort.Order.asc("nom_recette")));

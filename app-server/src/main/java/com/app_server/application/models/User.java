@@ -27,7 +27,8 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Recipe> recipeList;
     @OneToMany(mappedBy = "user")
-    private List<Favorite> favoriteList;
+    private List<Recipe> favoriteList;
     @OneToMany(mappedBy = "user")
     private List<Reaction> reactionList;
+
 }

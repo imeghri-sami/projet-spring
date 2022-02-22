@@ -27,20 +27,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // @formatter:off
         http
                 .authorizeRequests(a -> a
-                        .antMatchers( "/","/error", "/webjars/**").permitAll()
-                        .antMatchers("/oauth2/**").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
-                .exceptionHandling(e -> e
-                        .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
-                )
-                .logout(l -> l
-                        .logoutSuccessUrl("/").permitAll())
-                .csrf(c -> c
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
-                .oauth2Login()
-                .userInfoEndpoint()
-                .userService(oauth2UserService).and().successHandler(oAuth2LoginSuccessHandler);
+                .cors().and().csrf().disable();
         // @formatter:on
     }
+
 }

@@ -1,10 +1,15 @@
 package com.app_server.application.services.impl;
 
+import com.app_server.application.models.Favorite;
 import com.app_server.application.models.User;
 import com.app_server.application.repositories.UserRepository;
 import com.app_server.application.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -24,4 +29,5 @@ public class UserServiceImpl implements UserService {
         user.setPhoto(photoUrl);
         userRepository.save(user);
     }
+
 }
