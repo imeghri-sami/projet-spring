@@ -26,7 +26,7 @@ INSERT INTO `ingredient` (`ref`, `img`, `name`, `price`, `unit`) VALUES
 (5, 'https://i.ndtvimg.com/mt/cooks/2014-11/1378802129_onions_med.jpg', 'Onion', 4, 'kg'),
 (6, 'https://i.ndtvimg.com/mt/cooks/2014-11/turnip-shalgam.jpg', 'Turnip', 5, 'kg'),
 (7, 'https://i.ndtvimg.com/i/2014-11/cherry-tomatoes_625x300_61416570122.jpg', 'Tomato', 6, 'kg'),
-(7, 'https://i.ndtvimg.com/i/2014-11/cherry-tomatoes_625x300_61416570122.jpg', 'Tomato', 6, 'kg'),
+(8, 'https://i.ndtvimg.com/i/2014-11/cherry-tomatoes_625x300_61416570122.jpg', 'Tomato', 6, 'kg'),
 (9, 'https://i.ndtvimg.com/i/2014-11/snake-beans_625x300_71416569505.jpg', 'Snake Beans', 8, 'kg'),
 (16, 'https://i.ndtvimg.com/mt/cooks/2014-11/gherkins.jpg', 'Gherkins', 10, 'kg'),
 (17, 'https://i.ndtvimg.com/mt/cooks/2014-11/garlic.jpg', 'Garlic', 2, 'unit'),
