@@ -21,13 +21,13 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @GetMapping("/recipes/get")
-    public List<Map<String,Object>> getAll(@RequestParam("page") int page,@RequestParam(name = "size",defaultValue = "10") int size ) {
-        Map<String,Object> map =new HashMap<>();
-         return recipeService.getAll(page,size)
-                .stream()
-                .map(this::recipeToMap).collect(Collectors.toList());
-    }
+//    @GetMapping("/recipes/get")
+//    public List<Map<String,Object>> getAll(@RequestParam("page") int page,@RequestParam(name = "size",defaultValue = "10") int size ) {
+//        Map<String,Object> map =new HashMap<>();
+//         return recipeService.getAll(page,size)
+//                .stream()
+//                .map(this::recipeToMap).collect(Collectors.toList());
+//    }
 
     @PostMapping("/recipes/create")
     public Recipe addRecipe(@RequestBody Recipe payload){
@@ -44,20 +44,20 @@ public class RecipeController {
     }
 
     @GetMapping("/getRecipe/{ref}")
-    public Recipe getRecipe(int ref){
+    public Recipe getRecipe(@PathVariable int ref){
         return recipeService.getRecipe(ref);
     }
 
-    private Map<String,Object> recipeToMap(Recipe recipe){
-        Map<String,Object> map =new HashMap<>();
-        map.put("ref",recipe.getRef());
-        map.put("description",recipe.getDescription());
-        map.put("name",recipe.getName());
-        map.put("date",recipe.getDate());
-        map.put("time",recipe.getTime());
-        map.put("image",recipe.getImageList()==null?null:recipe.getImageList().get(0).getUrl());
-        map.put("categoryName",recipe.getCategory().getName());
-
-        return map;
-    }
+//    private Map<String,Object> recipeToMap(Recipe recipe){
+//        Map<String,Object> map =new HashMap<>();
+//        map.put("ref",recipe.getRef());
+//        map.put("description",recipe.getDescription());
+//        map.put("name",recipe.getName());
+//        map.put("date",recipe.getDate());
+//        map.put("time",recipe.getTime());
+//        map.put("image",recipe.getImageList()==null?null:recipe.getImageList().get(0).getUrl());
+//        map.put("categoryName",recipe.getCategory().getName());
+//
+//        return map;
+//    }
 }

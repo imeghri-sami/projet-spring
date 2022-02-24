@@ -1,5 +1,9 @@
 package com.app_server.application.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,17 +26,23 @@ public class Recipe {
     private double time;
 
     @ManyToOne
+    @JsonBackReference
     private User user;
     @ManyToOne
+    @JsonBackReference
     private Category category;
 
     @OneToMany(mappedBy = "recipe")
+    @JsonManagedReference
     private List<Image> imageList;
     @OneToMany(mappedBy = "recipe")
+    @JsonManagedReference
     private List<Reaction> reactionList;
     @OneToMany(mappedBy = "recipe")
+    @JsonManagedReference
     private List<Content> contentList;
     @OneToMany(mappedBy = "recipe")
+    @JsonManagedReference
     private List<Favorite> favoriteList;
 
     public float getPrice(){

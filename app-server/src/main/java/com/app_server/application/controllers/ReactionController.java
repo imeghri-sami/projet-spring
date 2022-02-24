@@ -14,8 +14,8 @@ public class ReactionController {
     @Autowired
     private ReactionService reactionService;
 
-    @PostMapping("/recipes/{ref}/react")
-    public Reaction reacToRecipe(@RequestBody Reaction reaction){
+    @PostMapping("/recipes/react")
+    public Reaction reactToRecipe(@RequestBody Reaction reaction){
         return reactionService.addReaction(reaction);
     }
     /*

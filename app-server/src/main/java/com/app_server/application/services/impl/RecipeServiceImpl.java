@@ -1,5 +1,6 @@
 package com.app_server.application.services.impl;
 
+import com.app_server.application.models.Content;
 import com.app_server.application.models.Recipe;
 import com.app_server.application.repositories.RecipeRepository;
 import com.app_server.application.services.RecipeService;
@@ -16,6 +17,8 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Autowired
     private RecipeRepository recipeRepository;
+
+
 
     @Override
     public List<Recipe> getAll(int page,int size) {
@@ -50,6 +53,6 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Recipe getRecipe(int ref) {
-        return recipeRepository.getById(ref);
+        return recipeRepository.findById(ref).get();
     }
 }
