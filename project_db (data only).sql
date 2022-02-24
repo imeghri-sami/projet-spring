@@ -63,7 +63,19 @@ INSERT INTO `ingredient` (`ref`, `img`, `name`, `price`, `unit`) VALUES
 (42, 'https://i.ndtvimg.com/mt/cooks/2014-11/1393499279_cranberries.jpg', 'Cranberry', 10, 'kg'),
 (43, 'https://i.ndtvimg.com/mt/cooks/2014-11/orange-santra.jpg', 'Orange', 7, 'kg'),
 (44, 'https://i.ndtvimg.com/mt/cooks/2014-11/shehtoot-mulberry.jpg', 'Mulberry', 18, 'kg'),
-(45, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg');
+(45, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(46, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(47, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(48, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(49, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(50, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(51, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(52, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(53, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(54, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(55, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(56, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg'),
+(57, 'https://i.ndtvimg.com/mt/cooks/2014-11/pear-naashpati.jpg', 'Pear', 13, 'kg');
 -- --------------------------------------------------------
 
 --
