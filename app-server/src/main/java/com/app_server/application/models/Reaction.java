@@ -1,6 +1,5 @@
 package com.app_server.application.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,12 +15,9 @@ public class Reaction {
     private int ref;
 
     @ManyToOne
-    @JsonBackReference
     private Recipe recipe;
     @ManyToOne
-    @JsonBackReference
     private User user;
     @ManyToOne
-    @JsonBackReference
     private TypeReact typeReact;
 }

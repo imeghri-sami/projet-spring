@@ -1,6 +1,5 @@
 package com.app_server.application.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,6 +20,5 @@ public class Ingredient {
     private String unit;
 
     @OneToMany(mappedBy = "ingredient")
-    @JsonManagedReference
     private List<Content> contentList;
 }

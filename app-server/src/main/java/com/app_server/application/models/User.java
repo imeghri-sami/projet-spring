@@ -1,7 +1,6 @@
 package com.app_server.application.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,13 +25,10 @@ public class User {
     private String photo;
 
     @OneToMany(mappedBy = "user")
-    @JsonManagedReference
     private List<Recipe> recipeList;
     @OneToMany(mappedBy = "user")
-    @JsonManagedReference
     private List<Recipe> favoriteList;
     @OneToMany(mappedBy = "user")
-    @JsonManagedReference
     private List<Reaction> reactionList;
 
 }

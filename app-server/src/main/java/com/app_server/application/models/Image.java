@@ -1,6 +1,5 @@
 package com.app_server.application.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,6 +17,5 @@ public class Image {
     private String url;
 
     @ManyToOne
-    @JsonBackReference
     private Recipe recipe;
 }

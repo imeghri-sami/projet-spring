@@ -1,6 +1,5 @@
 package com.app_server.application.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,6 +20,5 @@ public class TypeReact {
 
 
     @OneToMany(mappedBy = "typeReact")
-    @JsonManagedReference
     private List<Reaction> reactionList;
 }

@@ -1,6 +1,5 @@
 package com.app_server.application.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,7 +20,6 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category")
-    @JsonManagedReference
     private List<Recipe> recipeList;
 
 }
