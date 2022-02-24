@@ -1,5 +1,6 @@
 package com.app_server.application.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,7 +18,9 @@ public class Content {
     private double ingredientQuantity;
 
     @ManyToOne
+    @JsonBackReference(value = "content-recipe")
     private Recipe recipe;
     @ManyToOne
+    @JsonBackReference(value = "content-ingredient")
     private Ingredient ingredient;
 }
