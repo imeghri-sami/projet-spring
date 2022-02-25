@@ -11,5 +11,5 @@ public interface UserService {
     void createNewUserAfterOAuthLoginSuccess(String fullName , String photoUrl, String email);
 
 
-
+    User getUser(int ref);
 }

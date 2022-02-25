@@ -39,7 +39,6 @@ public class FavoriteController {
                 .map(this::favoriteToMap).collect(Collectors.toList());
     }
 
-
     private Map<String,Object> favoriteToMap(Favorite favorite){
         Map<String,Object> map =new HashMap<>();
         map.put("fav_ref",favorite.getRef());
@@ -49,7 +48,7 @@ public class FavoriteController {
         map.put("fav_date",favorite.getDate());
         map.put("recipe_date",favorite.getRecipe().getDate());
         map.put("time",favorite.getRecipe().getTime());
-        map.put("image",favorite.getRecipe().getImageList()==null?null:favorite.getRecipe().getImageList().get(0).getUrl());
+        map.put("image",favorite.getRecipe().getImage()==null?null:favorite.getRecipe().getImage());
         map.put("categoryName",favorite.getRecipe().getCategory().getName());
         return map;
     }

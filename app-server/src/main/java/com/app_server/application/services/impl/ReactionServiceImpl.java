@@ -16,4 +16,7 @@ public class ReactionServiceImpl implements ReactionService {
     public Reaction addReaction(Reaction reaction) {
         return reactionRepository.save(reaction);
     }
+
+    @Override
+    public void removeReaction(Reaction reaction){ reactionRepository.delete(reaction);}
 }

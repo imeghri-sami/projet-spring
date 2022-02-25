@@ -55,4 +55,8 @@ public class RecipeServiceImpl implements RecipeService {
     public Recipe getRecipe(int ref) {
         return recipeRepository.findById(ref).get();
     }
+
+    public void deleteRecipe(int ref){
+        recipeRepository.deleteById(ref);
+    }
 }

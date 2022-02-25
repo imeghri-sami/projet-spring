@@ -1,8 +1,6 @@
 package com.app_server.application.services.dto;
 
 
-import com.app_server.application.models.Category;
-import com.app_server.application.models.Image;
 import lombok.Data;
 
 import java.util.Date;

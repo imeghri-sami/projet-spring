@@ -21,6 +21,7 @@ public class Recipe {
     private String name;
     private Date date;
     private String video;
+    private String image;
     private double time;
 
     @ManyToOne
@@ -30,9 +31,7 @@ public class Recipe {
     @JsonBackReference(value = "category-recipe")
     private Category category;
 
-    @OneToMany(mappedBy = "recipe")
-    @JsonManagedReference(value = "image-recipe")
-    private List<Image> imageList;
+
     @OneToMany(mappedBy = "recipe")
     @JsonManagedReference(value="reaction-recipe")
     private List<Reaction> reactionList;

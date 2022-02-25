@@ -12,4 +12,6 @@ public interface RecipeService {
     List<Recipe> getAllRecettesBy(int lasIndex, String by, String order);
 
     Recipe getRecipe(int ref);
+
+    void deleteRecipe(int ref);
 }

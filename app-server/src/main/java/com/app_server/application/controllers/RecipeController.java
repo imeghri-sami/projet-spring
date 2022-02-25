@@ -22,7 +22,7 @@ public class RecipeController {
     private RecipeService recipeService;
 
     @GetMapping("/recipes/get")
-    public List<Map<String,Object>> getAll(@RequestParam("page") int page,@RequestParam(name = "size",defaultValue = "10") int size ) {
+    public List<Map<String,Object>> getAll(@RequestParam(name = "page",defaultValue = "0") int page,@RequestParam(name = "size",defaultValue = "10") int size ) {
         Map<String,Object> map =new HashMap<>();
          return recipeService.getAll(page,size)
                 .stream()
@@ -36,17 +36,21 @@ public class RecipeController {
 
 
 
-    @GetMapping("/getAllBy")
+    @GetMapping("/recipes/getAllBy")
     public List<Recipe> getAllRecettesBy(@RequestParam("lasIndex") int lasIndex,
                                          @RequestParam("by") String by,
                                          @RequestParam("order") String order){
         return recipeService.getAllRecettesBy(lasIndex,by,order);
     }
 
-    @GetMapping("/getRecipe/{ref}")
+    @GetMapping("/recipe/get/{ref}")
     public Recipe getRecipe(@PathVariable int ref){
         return recipeService.getRecipe(ref);
     }
+
+    @DeleteMapping("/recipe/delete/{ref}")
+    public void deleteRecipe(@PathVariable int ref){ recipeService.deleteRecipe(ref);}
+
 
     private Map<String,Object> recipeToMap(Recipe recipe){
         Map<String,Object> map =new HashMap<>();
@@ -55,7 +59,7 @@ public class RecipeController {
         map.put("name",recipe.getName());
         map.put("date",recipe.getDate());
         map.put("time",recipe.getTime());
-        map.put("image",recipe.getImageList()==null?null:recipe.getImageList().get(0).getUrl());
+        map.put("image",recipe.getImage()==null?null:recipe.getImage());
         map.put("categoryName",recipe.getCategory().getName());
 
         return map;
