@@ -3,10 +3,13 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+import { red } from "@mui/material/colors";
 
 import React from "react";
 import GoogleLogin from "react-google-login";
 import { Box } from "@mui/system";
+import CreatePostDialog from "../pages/CreateRecipe";
 
 export default function Navbar() {
   const [value, setValue] = React.useState(0);
@@ -42,11 +45,15 @@ export default function Navbar() {
           <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon />} />
           <BottomNavigationAction
             label="Create"
-            icon={<AddBoxOutlinedIcon />}
+            icon={<AddBoxOutlinedIcon sx={{ color: red[600] }} />}
           />
           <BottomNavigationAction
             label="Explore"
             icon={<ExploreOutlinedIcon />}
+          />
+          <BottomNavigationAction
+            label="Favorites"
+            icon={<FavoriteRoundedIcon />}
           />
           <BottomNavigationAction
             label="Account"
@@ -54,6 +61,7 @@ export default function Navbar() {
           />
         </BottomNavigation>
       )}
+      <CreatePostDialog />
     </Box>
   );
 }
