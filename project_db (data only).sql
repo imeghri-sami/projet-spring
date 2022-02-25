@@ -93,9 +93,9 @@ INSERT INTO `user` (`ref`, `age`, `description`, `email`, `name`, `password`, `p
 -- Dumping data for table `recipe`
 --
 
-INSERT INTO `recipe` (`ref`, `date`, `description`, `name`, `time`, `video`, `category_ref`, `user_ref`) VALUES
-(1, '2022-02-03 14:38:25', 'An country demesne message it. Bachelor domestic extended doubtful as concerns at. Morning prudent removal an letters by. On could my in order never it. Or excited certain sixteen it to parties colonel. Depending conveying direction has led immediate.', 'Recipe 1', 60, NULL, 1, 1),
-(2, '2022-02-03 14:42:31', 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence', 'Cinnamon Baked French Toast', 60, NULL, 1, 1),
+INSERT INTO `recipe` (`ref`, `date`, `description`, `name`, `time`, `video`, `image`, `category_ref`, `user_ref`) VALUES
+(1, '2022-02-03 14:38:25', 'An country demesne message it. Bachelor domestic extended doubtful as concerns at. Morning prudent removal an letters by. On could my in order never it. Or excited certain sixteen it to parties colonel. Depending conveying direction has led immediate.', 'Recipe 1', 60, NULL,'https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe-480x270.jpg', 1, 1),
+(2, '2022-02-03 14:42:31', 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence', 'Cinnamon Baked French Toast', 60, NULL,'https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe-480x270.jpg', 1, 1),
 (3, '2022-02-03 14:42:31', 'Suppose end get boy warrant general natural. Delightful met sufficient projection ask. Decisively everything principles if preference do impression of.', 'Brown Sugar Oatmeal Cookies', 40, NULL, 1, 1),
 (4, '2022-02-03 14:42:31', 'His followed carriage proposal entrance directly had elegance. Greater for cottage gay parties natural. Remaining he furniture on he discourse suspected perpetual.', 'Wafflemaker Hash Browns', 20, NULL, 2, 1),
 (5, '2022-02-03 14:42:31', 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. ', 'Pan Fried  Chops', 50, NULL, 5, 1),
