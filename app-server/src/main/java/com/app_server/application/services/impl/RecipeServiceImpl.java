@@ -83,7 +83,7 @@ public class RecipeServiceImpl implements RecipeService {
         map.put("ref",recipe.getRef());
         map.put("description",recipe.getDescription());
         map.put("name",recipe.getName());
-        map.put("date",recipe.getDate());
+        map.put("date",recipe.getLastModifiedAt());
         map.put("time",recipe.getTime());
         map.put("price",recipe.getPrice());
         map.put("image",recipe.getImage()==null?null:recipe.getImage());

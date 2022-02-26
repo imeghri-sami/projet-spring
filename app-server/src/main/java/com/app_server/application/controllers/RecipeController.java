@@ -49,7 +49,7 @@ public class RecipeController {
         recipe.setDescription(request.getParameter("description"));
         recipe.setName(request.getParameter("name"));
         recipe.setTime(Double.parseDouble(request.getParameter("time")));
-        recipe.setDate(new Date());
+        recipe.setLastModifiedAt(new Date());
         User user=new User();
         Category category=new Category();
         category.setRef(Integer.parseInt(request.getParameter("categoryRef")));
@@ -89,7 +89,7 @@ public class RecipeController {
         map.put("ref",recipe.getRef());
         map.put("description",recipe.getDescription());
         map.put("name",recipe.getName());
-        map.put("date",recipe.getDate());
+        map.put("date",recipe.getLastModifiedAt());
         map.put("time",recipe.getTime());
         map.put("price",recipe.getPrice());
         map.put("image",recipe.getImage()==null?null:recipe.getImage());
