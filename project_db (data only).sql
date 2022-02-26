@@ -15,6 +15,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
 --
 -- Dumping data for table `category`
 --
@@ -24,6 +25,7 @@ LOCK TABLES `category` WRITE;
 INSERT INTO `category` VALUES (1,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Breakfast.jpg?itok=GhPPX4I1','Breakfast'),(2,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/HoneySoyChickenSaladBowl.jpg?itok=AFw8Tc-l','Lunch'),(3,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Dinner_Recipes.jpg?itok=wusUnlBV','Dinner'),(4,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/chewy-oat-slice_0210.jpg?itok=CmSI_w2E','Snacks'),(5,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Salad.jpg?itok=eYEfiPvk','Salads'),(6,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Soups.jpg?itok=1pT8EsMZ','Soups'),(7,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/IMD%20noodle%20stirfry1.jpg?itok=P7pCCd1m','Noodles'),(8,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Whisk_PI_Cheesy-Herb-Garlic-Pizza_2703196907.jpg?itok=ICr03dnW','Pizza'),(9,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Burgers.jpg?itok=dP19seZa','Burgers'),(10,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Best%20ever%20mushroom%20sauce%202617.jpg?itok=ZYN889B_','Sauces'),(11,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Devo20169685_0.jpg?itok=uAe27sQx','Desserts'),(12,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Vsoy20155870_0.jpg?itok=BUFXEbgm','Drinks'),(13,'https://myfoodbook.com.au/sites/default/files/styles/category_collection_landing/public/category_image/Schw20158549_0.jpg?itok=7esE-sGB','Meat');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
+
 
 --
 -- Dumping data for table `content`
@@ -38,6 +40,7 @@ UNLOCK TABLES;
 --
 -- Dumping data for table `favorite`
 --
+
 
 LOCK TABLES `favorite` WRITE;
 /*!40000 ALTER TABLE `favorite` DISABLE KEYS */;

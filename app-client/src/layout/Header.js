@@ -2,7 +2,10 @@ import { AppBar, InputBase, Toolbar } from "@mui/material";
 import Logo from "../components/Logo";
 import { styled, alpha } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
-
+import Filter from "../components/Filter";
+import '../app.css'
+import Profile from "../assets/profile.png"
+import Avatar from '@mui/material/Avatar';
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -48,7 +51,7 @@ export default function Header() {
     <AppBar elevation={0} color="transparent" position="static">
       <Toolbar>
         <Logo />
-        <Search>
+        <Search className="search">
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
@@ -57,6 +60,8 @@ export default function Header() {
             inputProps={{ "aria-label": "search" }}
           />
         </Search>
+        <Filter></Filter>
+        <Avatar className="profile-avatar" src={Profile} />
       </Toolbar>
     </AppBar>
   );
