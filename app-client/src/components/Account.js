@@ -7,14 +7,18 @@ import { CardActionArea } from '@mui/material';
 
 export default function Account({user}) {
     let recipeNames = ""
-    // for (let i = 0; i < user.recipeList.length; i++) {
-    //     const element = user.recipeList[i];
-    //     if(!user.recipeList[i+1]){
-    //         recipeNames += element.name+"."
-    //         break;
-    //     }
-    //     recipeNames += element.name+", "
-    // }
+    try{
+        for (let i = 0; i < user.recipeList.length; i++) {
+            const element = user.recipeList[i];
+            if(!user.recipeList[i+1]){
+                recipeNames += element.name+"."
+                break;
+            }
+            recipeNames += element.name+", "
+        }
+    }catch(err){
+        console.log(err)
+    }
     // console.log(user)
     return (
         <Card sx={{ maxWidth: 345 }}>

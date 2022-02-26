@@ -11,7 +11,7 @@ import GoogleLogin from "react-google-login";
 import { Box } from "@mui/system";
 import CreatePostDialog from "../pages/CreateRecipe";
 
-export default function Navbar() {
+export default function Navbar({setIsAccount, setIsFavorite,setIsRecipe}) {
   const [value, setValue] = React.useState(0);
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -51,12 +51,31 @@ export default function Navbar() {
             icon={<AddBoxOutlinedIcon sx={{ color: red[600] }} />}
           />
           <BottomNavigationAction
+            onClick={()=>{
+              setIsAccount(false)
+              setIsRecipe(true)
+              setIsFavorite(false)
+            }}
             label="Explore"
             icon={<ExploreOutlinedIcon />}
           />
           <BottomNavigationAction
+            onClick={()=>{
+              setIsAccount(false)
+              setIsRecipe(false)
+              setIsFavorite(true)
+            }}
             label="Favorites"
             icon={<FavoriteRoundedIcon />}
+          />
+          <BottomNavigationAction
+            onClick={()=>{
+              setIsAccount(true)
+              setIsRecipe(false)
+              setIsFavorite(false)
+            }}
+            label="Account"
+            icon={<AccountCircleOutlinedIcon />}
           />
         </BottomNavigation>
       )}
