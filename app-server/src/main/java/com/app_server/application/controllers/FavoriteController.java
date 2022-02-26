@@ -47,7 +47,7 @@ public class FavoriteController {
         map.put("description",favorite.getRecipe().getDescription());
         map.put("name",favorite.getRecipe().getName());
         map.put("fav_date",favorite.getDate());
-        map.put("recipe_date",favorite.getRecipe().getDate());
+        map.put("recipe_date",favorite.getRecipe().getLastModifiedAt());
         map.put("time",favorite.getRecipe().getTime());
         map.put("image",favorite.getRecipe().getImageList()==null?null:favorite.getRecipe().getImageList().get(0).getUrl());
         map.put("categoryName",favorite.getRecipe().getCategory().getName());

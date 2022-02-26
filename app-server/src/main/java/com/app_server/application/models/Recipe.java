@@ -3,6 +3,7 @@ package com.app_server.application.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,18 +15,25 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Recipe {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ref;
     private String description;
     private String name;
-    private Date date;
     private String video;
+
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @LastModifiedDate
+    private Date lastModifiedAt;
+
     private double time;
 
     @ManyToOne
     @JsonBackReference(value = "user-recipe")
     private User user;
+
     @ManyToOne
     @JsonBackReference(value = "category-recipe")
     private Category category;
@@ -33,9 +41,11 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe")
     @JsonManagedReference(value = "image-recipe")
     private List<Image> imageList;
+
     @OneToMany(mappedBy = "recipe")
     @JsonManagedReference(value="reaction-recipe")
     private List<Reaction> reactionList;
+
     @OneToMany(mappedBy = "recipe")
     @JsonManagedReference(value = "content-recipe")
     private List<Content> contentList;

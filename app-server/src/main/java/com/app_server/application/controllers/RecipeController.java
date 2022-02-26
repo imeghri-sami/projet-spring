@@ -53,7 +53,7 @@ public class RecipeController {
         map.put("ref",recipe.getRef());
         map.put("description",recipe.getDescription());
         map.put("name",recipe.getName());
-        map.put("date",recipe.getDate());
+        map.put("updatedAt",recipe.getLastModifiedAt());
         map.put("time",recipe.getTime());
         map.put("image",recipe.getImageList()==null?null:recipe.getImageList().get(0).getUrl());
         map.put("categoryName",recipe.getCategory().getName());
