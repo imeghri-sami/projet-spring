@@ -1,5 +1,6 @@
 package com.app_server.application.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -19,7 +20,9 @@ public class Favorite {
     private Date date;
 
     @ManyToOne
+    @JsonBackReference(value = "favorite-recipe")
     private Recipe recipe;
     @ManyToOne
+    @JsonBackReference(value = "favorite-user")
     private User user;
 }

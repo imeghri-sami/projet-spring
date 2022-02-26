@@ -24,4 +24,9 @@ public class UserServiceImpl implements UserService {
         user.setPhoto(photoUrl);
         userRepository.save(user);
     }
+
+    @Override
+    public User getUser(int ref) {
+        return userRepository.findById(ref).get();
+    }
 }

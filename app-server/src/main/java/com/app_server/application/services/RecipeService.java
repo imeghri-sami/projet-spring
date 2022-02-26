@@ -5,11 +5,13 @@ import com.app_server.application.models.Recipe;
 import java.util.List;
 
 public interface RecipeService {
-    List<Recipe> getAll();
+    List<Recipe> getAll(int lasIndex,int size);
 
     Recipe addRecipe(Recipe payload);
 
-    List<Recipe> getAllRecettesBy(String by, String order);
+    List<Recipe> getAllRecettesBy(int page,int size, String by, String order);
 
     Recipe getRecipe(int ref);
+
+    void deleteRecipe(int ref);
 }

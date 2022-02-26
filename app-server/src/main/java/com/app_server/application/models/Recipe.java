@@ -1,6 +1,9 @@
 package com.app_server.application.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
+import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,29 +22,29 @@ public class Recipe {
     private String name;
     private Date date;
     private String video;
+    private String image;
     private double time;
 
     @ManyToOne
+    @JsonBackReference(value = "user-recipe")
     private User user;
     @ManyToOne
+    @JsonBackReference(value = "category-recipe")
     private Category category;
 
+
     @OneToMany(mappedBy = "recipe")
-    private List<Image> imageList;
-    @OneToMany(mappedBy = "recipe")
+    @JsonManagedReference(value="reaction-recipe")
     private List<Reaction> reactionList;
     @OneToMany(mappedBy = "recipe")
+    @JsonManagedReference(value = "content-recipe")
     private List<Content> contentList;
+
     @OneToMany(mappedBy = "recipe")
+    @JsonManagedReference(value = "favorite-recipe")
     private List<Favorite> favoriteList;
 
-    public float getPrice(){
-        float total=0;
-        for (Content content :
-                contentList) {
-            total+= content.getIngredient().getPrice()*content.getIngredientQuantity();
-        }
-        return total;
-    }
+    @Formula("(select sum(i.price) from content c, ingredient i where c.ingredient_ref=i.ref and c.recipe_ref= ref)")
+    private float price;
 
 }
