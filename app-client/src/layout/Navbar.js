@@ -61,7 +61,7 @@ export default function Navbar() {
           />
         </BottomNavigation>
       )}
-      <CreatePostDialog />
+      {/* <CreatePostDialog /> */}
     </Box>
   );
 }

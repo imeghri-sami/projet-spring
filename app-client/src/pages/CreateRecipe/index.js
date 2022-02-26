@@ -66,7 +66,7 @@ function PostDialogAcitons({
 }
 
 export default function CreatePostDialog(open = false) {
-  const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
+  const [confirmDialogOpen, setConfirmDialogOpen] = useState(true);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
   const [isOpen, setIsOpen] = useState(open);
