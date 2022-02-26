@@ -12,20 +12,11 @@ let api = axios.create({
   baseURL: "http://localhost:8080"
 })
 
-let favorites = (user)=>{
-  try{
-    user.favoriteList.map( (recipe)=>  {
-      return <RecipeCard recipe={recipe}></RecipeCard>
-     })
-  }catch(err){
-
-  }
-}
-
 function App() {
   const [isRecipe, setIsRecipe] = useState(true)
   const [isAccount, setIsAccount]= useState(false)
   const [isFavorite, setIsFavorite] = useState(false)
+  const [userFavorites, setUserFavorites ] = useState([])
   const [recipes,setRecipes] = useState([])
   const [user,setUser] = useState({})
   useEffect(()=>{
@@ -44,6 +35,13 @@ function App() {
     })
     .catch(err=>console.log(err))
   }, [])
+
+  useEffect(()=>{
+    api.get("/favorites/get/1")
+    .then(response =>{
+      setUserFavorites(response.data)
+    })
+  }, [])
   return (
     <div className="App">
       <Router>
@@ -56,7 +54,12 @@ function App() {
             }
             )
           }
-          {isFavorite &&  favorites(user)}
+          {isFavorite &&  
+            userFavorites.map((recipe)=>  {
+              return <RecipeCard recipe={recipe}></RecipeCard>
+            }
+            )
+          }
          </div> 
         <Navbar setIsAccount={setIsAccount} setIsFavorite={setIsFavorite} setIsRecipe={setIsRecipe} />
       </Router>

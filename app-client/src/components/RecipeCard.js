@@ -48,7 +48,7 @@ export default function RecipeCard({recipe}) {
           </IconButton>
         }
         title={recipe.name}
-        subheader= {convertDate(recipe.date)}
+        subheader= {convertDate(recipe.date ? recipe.date:recipe.recipe_date)}
       />
       <CardMedia
         component="img"
