@@ -13,6 +13,8 @@ import CreatePostDialog from "../pages/CreateRecipe";
 
 export default function Navbar() {
   const [value, setValue] = React.useState(0);
+  const [isOpen, setIsOpen] = React.useState(false);
+
   let isSignedIn = true;
   return (
     <Box
@@ -44,6 +46,7 @@ export default function Navbar() {
         >
           <BottomNavigationAction label="Home" icon={<HomeOutlinedIcon />} />
           <BottomNavigationAction
+            onClick={() => setIsOpen(true)}
             label="Create"
             icon={<AddBoxOutlinedIcon sx={{ color: red[600] }} />}
           />
@@ -55,13 +58,9 @@ export default function Navbar() {
             label="Favorites"
             icon={<FavoriteRoundedIcon />}
           />
-          <BottomNavigationAction
-            label="Account"
-            icon={<AccountCircleOutlinedIcon />}
-          />
         </BottomNavigation>
       )}
-      {/* <CreatePostDialog /> */}
+      <CreatePostDialog isOpen={isOpen} setIsOpen={setIsOpen} />
     </Box>
   );
 }

@@ -9,7 +9,7 @@ public interface RecipeService {
 
     Recipe addRecipe(Recipe payload);
 
-    List<Recipe> getAllRecettesBy(int lasIndex, String by, String order);
+    List<Recipe> getAllRecettesBy(int page,int size, String by, String order);
 
     Recipe getRecipe(int ref);
 

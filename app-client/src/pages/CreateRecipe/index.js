@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import Cropper from "react-easy-crop";
 import {
   Button,
@@ -65,11 +65,11 @@ function PostDialogAcitons({
   );
 }
 
-export default function CreatePostDialog(open = false) {
-  const [confirmDialogOpen, setConfirmDialogOpen] = useState(true);
+export default function CreatePostDialog({ isOpen, setIsOpen }) {
+  const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
-  const [isOpen, setIsOpen] = useState(open);
+  //const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(0);
   const [currentTitle, setCurrentTitle] = useState(titles[step]);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
@@ -82,12 +82,21 @@ export default function CreatePostDialog(open = false) {
     userRef: 1,
   });
 
+  useEffect(() => {
+    return () => {
+      setCroppedAreaPixels(null);
+      setImageSrc(null);
+      setCroppedImage(null);
+      setStep(0);
+      setCurrentTitle(titles[0]);
+    };
+  }, []);
+
   const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
     setCroppedAreaPixels(croppedAreaPixels);
   }, []);
 
   function upload() {
-    console.log(values);
     new RecipeService().upload(
       values.name,
       values.description,
@@ -105,7 +114,9 @@ export default function CreatePostDialog(open = false) {
     setStep((prevStep) => {
       if (prevStep + 1 >= titles.length) {
         upload();
+
         setIsOpen(false);
+        setImageSrc(null);
         return prevStep;
       }
       setCurrentTitle(titles[prevStep + 1]);
@@ -117,6 +128,8 @@ export default function CreatePostDialog(open = false) {
     setStep((prevStep) => {
       if (prevStep - 1 < 0) {
         setConfirmDialogOpen(true);
+        setImageSrc(null);
+
         return prevStep;
       }
       setCurrentTitle(titles[prevStep - 1]);
