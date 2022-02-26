@@ -1,26 +1,10 @@
 import { Box } from "@mui/system";
 import { TextField, Divider } from "@mui/material";
-import RecipeService from "../../../services/RecipeServices";
 
-export default function PostWriter({ corppedImg }) {
-  const [values, setValues] = useState({
-    name: "",
-    description: "",
-    time: "",
-    catergoryRef: 0,
-    userRef: 1,
-  });
-
-  function upload() {
-    new RecipeService().upload(
-      values.name,
-      values.description,
-      values.time,
-      corppedImg
-    );
+export default function PostWriter({ croppedImage, values, setValues }) {
+  function handleChange(e) {
+    setValues({ ...values, [e.target.name]: e.target.value });
   }
-
-  function handleChange() {}
 
   return (
     <Box
@@ -34,9 +18,11 @@ export default function PostWriter({ corppedImg }) {
         alignItems: "center",
       }}
     >
-      <img style={{ borderRadius: "4px" }} width="188.3" src={corppedImg} />
+      <img style={{ borderRadius: "4px" }} width="188.3" src={croppedImage} />
       <TextField
         onChange={handleChange}
+        value={values.name}
+        name="name"
         sx={{ marginTop: "20px", marginBottom: "20px", width: "100%" }}
         variant="standard"
         placeholder="Give your recipe a name"
@@ -45,6 +31,8 @@ export default function PostWriter({ corppedImg }) {
 
       <TextField
         onChange={handleChange}
+        value={values.description}
+        name="description"
         sx={{ marginBottom: "20px", width: "100%" }}
         multiline
         rows={4}
@@ -53,6 +41,9 @@ export default function PostWriter({ corppedImg }) {
       />
       <Divider />
       <TextField
+        onChange={handleChange}
+        value={values.time}
+        name="time"
         sx={{ marginBottom: "20px", width: "100%" }}
         variant="standard"
         placeholder="Add a time "

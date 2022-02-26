@@ -13,6 +13,7 @@ import ConfirmDialog from "../../components/dialog/ConfirmDialog";
 import FileUploader from "./components/FileUploader";
 import { getCroppedImg } from "./canvasUtils";
 import PostWriter from "./components/PostWriter";
+import RecipeService from "../../services/RecipeServices";
 
 const DialogActionsStyle = {
   paddingTop: "16px",
@@ -73,10 +74,27 @@ export default function CreatePostDialog(open = false) {
   const [currentTitle, setCurrentTitle] = useState(titles[step]);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
   const [croppedImage, setCroppedImage] = useState(null);
+  const [values, setValues] = useState({
+    name: "",
+    description: "",
+    time: "",
+    catergoryRef: 0,
+    userRef: 1,
+  });
 
   const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
     setCroppedAreaPixels(croppedAreaPixels);
   }, []);
+
+  function upload() {
+    console.log(values);
+    new RecipeService().upload(
+      values.name,
+      values.description,
+      values.time,
+      croppedImage
+    );
+  }
 
   function handleNextClick() {
     if (imageSrc != null) {
@@ -86,7 +104,8 @@ export default function CreatePostDialog(open = false) {
     }
     setStep((prevStep) => {
       if (prevStep + 1 >= titles.length) {
-        // submit data
+        upload();
+        setIsOpen(false);
         return prevStep;
       }
       setCurrentTitle(titles[prevStep + 1]);
@@ -142,7 +161,14 @@ export default function CreatePostDialog(open = false) {
           onZoomChange={setZoom}
         />
       );
-    else return <PostWriter corppedImg={croppedImage} />;
+    else
+      return (
+        <PostWriter
+          croppedImage={croppedImage}
+          values={values}
+          setValues={setValues}
+        />
+      );
   }
   return (
     <>
