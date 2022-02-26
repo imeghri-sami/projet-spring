@@ -7,6 +7,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
+import EventNoteIcon from '@mui/icons-material/EventNote';
 const StyledMenu = styled((props) => (
   <Menu
     elevation={0}
@@ -89,6 +90,10 @@ export default function Filter() {
         <MenuItem onClick={handleClose} disableRipple>
           <PaidIcon />
           Price
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
+          <EventNoteIcon />
+          Date
         </MenuItem>
       </StyledMenu>
     </div>
